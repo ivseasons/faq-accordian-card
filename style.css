@@ -1,0 +1,178 @@
+/*
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+
+#### Gradient
+
+Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+
+### Neutral
+
+#### Text
+
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+
+#### Dividers
+
+- Light grayish blue: hsl(240, 5%, 91%)
+*/
+
+html {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+
+body {
+    background: linear-gradient(180deg, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    background: white;
+    border-radius: 1.5em;
+    position: relative;
+    padding: 1em 2.5em 4em 2.5em;
+    margin: 2em;
+    margin-top: 5em;
+    width: 290px;
+    box-shadow: 0px 40px 30px rgba(0, 0, 0, 0.2);
+}
+
+.left-container {
+    height: 90px;
+    display: grid;
+    place-content: center;
+}
+
+.box-svg {
+    display: none;
+}
+
+.illustration-svg {
+    position: absolute;
+    top: -110px;
+    width: 250px;
+    margin-left: auto;
+    left: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 1em;
+}
+
+button {
+    background: none;
+    border: none;
+    color: hsl(240, 6%, 50%);
+    font-size: 1.2rem;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+button:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+
+.arrow-svg {
+    position: absolute;
+    width: 13px;
+    height: 10px; 
+    right: 2.5em;
+    margin-top: .5em;
+}
+
+p.content {
+    height: 0;
+    font-size: 1.1rem;
+    color: hsl(240, 6%, 50%);
+    overflow: hidden;
+    margin: 0;
+    transition: 0.6s;
+}
+
+.active .content {
+    height: auto;
+    padding-top: 1em;
+    transition: 0.5s;
+}
+
+.active button {
+    color: black;
+    font-weight: bold;
+}
+
+.active .arrow-svg {
+    transform: scaleY(-1);
+    transition: 0.5s;
+}
+
+hr {
+    border-top: .5px solid hsl(240, 5%, 91%);
+    margin: 1.5em 0;
+}
+
+@media (min-width: 950px) {
+
+    .container {
+        display: flex;
+        width: 900px;
+        padding: 0;
+    }
+
+    .left-container {
+        display: inline-block;
+        height: 100%;
+        width: 50%;
+        background-image: url("./images/bg-pattern-desktop.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom -40px right 100px;
+    }
+
+    .right-container {
+        width: 40%;
+    }
+
+    .box-svg {
+        position: relative;
+        display: unset;
+        z-index: 3;
+        left: -120px;
+        top: 180px;
+    }
+
+    .illustration-svg {
+        display: inline-block;
+        width: 300px;
+        top: 10%;
+        left: -100px;
+        z-index: 2;
+    }
+
+    .pattern-svg {
+       display: none;
+    }
+
+    h1 {
+        padding-top: 1.5em;
+        padding-bottom: .5em;
+        text-align: left;
+    }
+
+    .extra-padding {
+        margin-bottom: 5em;
+    }
+
+    .arrow-svg {
+        right: 8em;
+    }
+}
